@@ -1,0 +1,8 @@
+Pout installer et faire tourner ce code : 
+
+1. disposer d'une installation php > 5.3 + mysql
+2. créer la base : le script sql se trouve dans le répertoire db
+3. configurer l'application et l'accès à la base de données : conf/appconfig.php, conf/db_config.ini
+4. éventuellement, adapter la réécriture d'url dans rest/.htacess - notamment rewriteBase si nécessaire
+
+avec un peu de chance et beaucoup de magie, il y a quelques trucs qui pourraient éventuellement finir par s'afficher. 

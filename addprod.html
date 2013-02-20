@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>
+         <form id="crazy_form" METHOD="post" ACTION="rest/produits/" enctype="multipart/form-data">
+                       
+                           <p>
+                               <input type="text"  name="ref" placeholder="reference produit "  autofocus required>
+                               <input type="text"  name="nom" placeholder="nom produit"  size="16">
+                               <input type="text"  name="marque" placeholder="marque" value="" size="10" autocomplete required>
+                               <input type ="number" name="stock" placeholder="stock">
+                                  
+                           </p>
+                           <p> 
+                              <label for="id_categ"> Catégorie :</label>
+                                 <select name="id_categ">
+                                     <option value="1">photo</option>
+                                     <option value="2">TV/vidéo</option>
+                                     <option value="3">audio</option>
+                                     <option value="4">mobilité</option>
+                                     <option value="5">loisirs</option>
+
+                                </select>
+                           
+                               <label for="code_t"> Dépt :</label>
+                               <select name="code_t">
+                                  <option value="1">TS-1</option>
+                                  <option value="2">TS-2</option>
+                                  <option value="3">TS-3</option>
+                                  <option value="4">TS-4</option>
+                                  <option value="5">TS-5</option>
+
+
+                                </select>
+                          
+                              
+                               
+                           </p> 
+                           
+                           <p>
+                              
+                               <textarea name="descr" cols="70" rows="4" required>décrivez votre produit ici</textarea>
+                           </p>
+                           <p>
+                               <label for="prod_photo_file">ajouter une photo :</label>
+                               <input type="file" name="prod_photo_file" size="40">
+                               
+                           </p>
+                           
+                        
+                          
+                           
+                           <p>
+                            
+                               <input type="submit" value="valider" name="prod_form_submit">
+                               <input type="reset" value="annuler">
+                           </p>       
+                           
+                                     
+                       
+                       
+                       
+                       
+                   </form>   
+            
+            
+        </div>
+    </body>
+</html>

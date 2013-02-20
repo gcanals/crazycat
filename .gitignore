@@ -1,0 +1,4 @@
+# ignore the vendor directory
+vendor/
+# ignore the raw data directoy containing source images
+rawdata/

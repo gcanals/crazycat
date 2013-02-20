@@ -1,0 +1,7 @@
+
+
+# 
+# prevent from reading the config files with urls
+
+
+deny all

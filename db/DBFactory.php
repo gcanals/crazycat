@@ -41,7 +41,7 @@ class DBFactory {
 
     $dbtype=$config['db_driver'];$host=$config['host']; $dbname=$config['dbname'];
     $user=$config['db_user']; $pass=$config['db_password']; 
-    $port=$config['dbport'];
+    $port=( (isset($config['dbport']))?$config['dbport']:null);
     $dsn="$dbtype:host=$host;";
     if (!empty($port)) $dsn.="port=$port;";
     $dsn.="dbname=$dbname";

@@ -10,6 +10,6 @@ define ('DBCONFIG_FILE', 'conf/db.config.ini');
 define ('IMAGEDIR_NAME' ,'img');
 define ('IMG_URL_PATH' ,'/crazycat/img');
 define ('CRAZY_DB' ,  'CRAZY') ;
-define ('SERVICE_URL', 'http://localhost');
+define ('SERVICE_URL', 'http://localhost:8888');
 define ('LOCAL_URL_PATH', '/crazycat/');
 ?>

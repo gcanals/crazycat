@@ -2,3 +2,7 @@
 vendor/
 # ignore the raw data directoy containing source images
 rawdata/
+# ignore netbeans data
+nbproject/
+.idea
+/conf/db.config.ini

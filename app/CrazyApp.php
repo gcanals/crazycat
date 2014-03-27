@@ -182,6 +182,7 @@ class CrazyApp {
           }
           case 'Produit' : {
               $jsonarray['ref'] = $m->getAttr('ref');
+              $jsonarray['short-desc']= substr($m->getAttr('descr'),0,50).'...';
               $jsonarray['imgUrl'] = self::makeCrazyUrl(IMG_URL_PATH.'/'.$m->getAttr('photo_path'));
              
               break;
@@ -193,7 +194,7 @@ class CrazyApp {
   
   public static function json_crazy_object(DBModel $m,\Slim\Slim $app ) {
       if (is_null($m)) return '{}';
-      
+      //var_dump($m);
       $jsonarray['type'] = get_class($m) ;
       $jsonarray['id'] = intval($m->getOid()) ;
       
@@ -227,15 +228,24 @@ class CrazyApp {
               $jsonarray['marque'] = $m->getAttr('marque');
               $jsonarray['descr'] = $m->getAttr('descr');
               $jsonarray['stock'] = $m->getAttr('stock');
-              $jsonarray['tarif'] = self::json_crazy_object_short($m->getTarif(), $app) ;
+              //$jsonarray['tarif'] = self::json_crazy_object_short($m->getTarif(), $app) ;
               $jsonarray['imgUrl'] = self::makeCrazyUrl(IMG_URL_PATH.'/'.$m->getAttr('photo_path'));
-              $jsonarray['categ'] = self::json_crazy_object_short($m->getCategorie(), $app) ;
+              //$jsonarray['categ'] = self::json_crazy_object_short($m->getCategorie(), $app) ;
               break;
           }
           
       }
-     
-      return json_encode($jsonarray, JSON_FORCE_OBJECT);
+      if ($m instanceof Produit) {
+      $jsonObj= substr(json_encode($jsonarray, JSON_FORCE_OBJECT),0, -1);
+      $jsonObj.= ', "tarif": '.self::json_crazy_object_short($m->getTarif(), $app) ;
+      $jsonObj.= ', "categ": '.self::json_crazy_object_short($m->getCategorie(), $app) .'}';
+      } else {
+          $jsonObj = json_encode($jsonarray, JSON_FORCE_OBJECT);
+      }
+      
+      return $jsonObj;
+      
+      
   }
   
   public static function json_crazy_list( $a, \Slim\Slim $app) {
